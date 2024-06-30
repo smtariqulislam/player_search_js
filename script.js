@@ -15,7 +15,7 @@ function fetchPlayerData(playerName) {
 
 // all player
 function fetchPlayerAll() {
-  fetch(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=`)
+  fetch(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p= `)
     .then((response) => response.json())
     .then((data) => {
       displayPlayerData(data.player);
