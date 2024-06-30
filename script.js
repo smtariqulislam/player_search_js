@@ -94,7 +94,7 @@ function addMe() {
   }
 }
 
-// Function to update the count display
+
 function updateCountDisplay() {
   const countDisplay = document.getElementById("countDisplay");
   countDisplay.textContent = `Count: ${addCount}`;
