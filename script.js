@@ -94,7 +94,6 @@ function addMe() {
   }
 }
 
-
 function updateCountDisplay() {
   const countDisplay = document.getElementById("countDisplay");
   countDisplay.textContent = `Count: ${addCount}`;
@@ -102,6 +101,9 @@ function updateCountDisplay() {
 
 function showDetails(player) {
   const popupDetails = document.getElementById("popupDetails");
+  const description = player.strDescriptionEN || "No description available";
+  const limitedDescription =
+    description.split(" ").slice(0, 10).join(" ") +"...";
 
   const playerDetails = `
         <h2>${player.strPlayer || "No name available"}</h2>
@@ -113,7 +115,7 @@ function showDetails(player) {
           player.dateBorn || "No birthdate available"
         }</p>
         <p><strong>Description:</strong> ${
-          player.strDescriptionEN || "No description available"
+          limitedDescription || "No description available"
         }</p>
         <div class="social-media-icons">
             ${
@@ -137,4 +139,4 @@ function showDetails(player) {
   popupDetails.innerHTML = playerDetails;
 }
 
-window.onload = fetchPlayerAll;
+fetchPlayerAll();
